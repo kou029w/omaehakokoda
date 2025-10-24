@@ -54,7 +54,8 @@ app.get("/", (c) => {
   <div id="map"></div>
   <div class="info">
     📌 ${city}, ${country}<br>
-    🌐 緯度: ${lat}, 経度: ${lng}
+    🌐 緯度: ${lat}, 経度: ${lng}<br>
+    <a href="https://github.com/kou029w/omaehakokoda" target="_blank" style="color: white; text-decoration: underline; margin-top: 10px; display: inline-block;">🔗 GitHub</a>
   </div>
 
   <script src="https://unpkg.com/leaflet"></script>
