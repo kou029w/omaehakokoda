@@ -3,6 +3,7 @@ import { Hono } from "hono";
 const app = new Hono();
 
 app.get("/", (c) => {
+  const ip = c.req.header("x-forwarded-for");
   const lat = c.req.header("x-vercel-ip-latitude");
   const lng = c.req.header("x-vercel-ip-longitude");
   const city = c.req.header("x-vercel-ip-city");
@@ -53,6 +54,7 @@ app.get("/", (c) => {
   <h1>📍 お前はここだ</h1>
   <div id="map"></div>
   <div class="info">
+    🖥️ IPアドレス: ${ip}<br>
     📌 ${city}, ${country}<br>
     🌐 緯度: ${lat}, 経度: ${lng}<br>
     <a href="https://github.com/kou029w/omaehakokoda" target="_blank" style="color: white; text-decoration: underline; margin-top: 10px; display: inline-block;">🔗 GitHub</a>
